@@ -8,21 +8,24 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-export function addTodo (text) {
+let nextTodoId = 0
+
+export const addTodo = (text) => {
   return {
     type: ADD_TODO,
+    id: nextTodoId++,
     text
   }
 }
 
-export function toggleTodo (index) {
+export const toggleTodo = (index) => {
   return {
     type: TOGGLE_TODO,
     index
   }
 }
 
-export function setVisibilityFilter (filter) {
+export const setVisibilityFilter = (filter) => {
   return {
     type: SET_VISIBILITY_FILTER,
     filter

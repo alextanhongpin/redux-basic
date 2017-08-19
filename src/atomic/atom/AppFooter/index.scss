@@ -1,0 +1,8 @@
+@import "styles/variables.scss";
+
+.app-footer {
+    height: $app-footer;
+    line-height: $app-footer;
+    background: #EEEEEE;
+    padding: 0 20px;
+}

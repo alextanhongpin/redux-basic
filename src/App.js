@@ -3,12 +3,12 @@ import React from 'react'
 import { Switch, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import NoMatch from './atomic/atom/NoMatch'
-import Todos from './atomic/page/todos'
+import Todos from './atomic/page/Todos'
 
 import AppHeader from './atomic/atom/AppHeader'
-const HeaderPage = () => (
-  <AppHeader>hello world</AppHeader>
-)
+import AppLayout from './atomic/atom/AppLayout'
+import AppFooter from './atomic/atom/AppFooter'
+
 const HelloPage = () => (
   <div>Hello <Link to={'/world'}>World</Link></div>
 )
@@ -18,11 +18,16 @@ const WorldPage = () => (
 
 const Root = () => (
   <Switch>
-    <Route exact path='/' component={Todos.page} />
-    <Route path='/hello' component={HelloPage} />
-    <Route path='/world' component={WorldPage} />
-    <Route path='/header' component={HeaderPage} />
+    <AppLayout
+      header={<AppHeader />}
+      footer={<AppFooter />}
+    >
+      <Route exact path='/' component={Todos.page} />
+      <Route path='/hello' component={HelloPage} />
+      <Route path='/world' component={WorldPage} />
+    </AppLayout>
     <Route component={NoMatch} />
+
   </Switch>
 )
 

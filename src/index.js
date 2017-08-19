@@ -9,9 +9,9 @@ import { Route } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
-import Todos from './atomic/page/todos'
+import Todos from './atomic/page/Todos'
 
-import './index.scss'
+import './index.css'
 
 let store = createStore(Todos.reducer)
 

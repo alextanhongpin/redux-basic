@@ -1,5 +1,8 @@
+@import './styles/box-sizing.css';
+@import './styles/reset.css';
+@import './styles/typography.css';
+
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    font-family: Avenir, Helvetica, sans-serif;
 }

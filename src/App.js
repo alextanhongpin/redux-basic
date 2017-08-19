@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 import NoMatch from './atomic/atom/NoMatch'
 import Todos from './atomic/page/todos'
 
+import AppHeader from './atomic/atom/AppHeader'
+const HeaderPage = () => (
+  <AppHeader>hello world</AppHeader>
+)
 const HelloPage = () => (
   <div>Hello <Link to={'/world'}>World</Link></div>
 )
@@ -17,6 +21,7 @@ const Root = () => (
     <Route exact path='/' component={Todos.page} />
     <Route path='/hello' component={HelloPage} />
     <Route path='/world' component={WorldPage} />
+    <Route path='/header' component={HeaderPage} />
     <Route component={NoMatch} />
   </Switch>
 )
